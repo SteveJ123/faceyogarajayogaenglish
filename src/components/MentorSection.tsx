@@ -34,17 +34,15 @@ export const MentorSection: React.FC<MentorSectionProps> = ({ language, onOpenRe
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
             {/* Left Column: Portrait */}
             <div className="lg:col-span-5 flex flex-col items-center">
-              <div className="w-full max-w-sm rounded-2xl overflow-hidden shadow-md border border-[#D5D9BE] bg-[#F2F4E6]">
+              <div className="relative w-full max-w-sm rounded-2xl overflow-hidden shadow-md border border-[#D5D9BE] bg-[#F2F4E6]">
                 <img
                   src={IMAGES.mentor}
                   alt="Legala Manjula - Spiritual Mentor and Face Yoga Trainer"
                   className="w-full h-auto object-cover aspect-[3/4]"
                   referrerPolicy="no-referrer"
-                />
+                />                
               </div>
-
-              {/* Roles strip */}
-              <div className="w-full max-w-sm mt-4 p-3 bg-[#F8F9F2] rounded-xl border border-[#E3E6D2] text-center">
+              <div className="w-full max-w-sm mt-2 p-3 bg-[#F8F9F2] rounded-xl border border-[#E3E6D2] text-center">
                 <div className="text-xs font-bold text-[#373B22]">
                   {language === 'en' ? 'Face Yoga & Raja Yoga Master Trainer' : 'ఫేస్ యోగ + రాజ యోగ ట్రైనర్'}
                 </div>
@@ -52,6 +50,9 @@ export const MentorSection: React.FC<MentorSectionProps> = ({ language, onOpenRe
                   {language === 'en' ? 'Gyan Murli Foundation' : 'జ్ఞాన్ మురళి ఫౌండేషన్'}
                 </div>
               </div>
+
+              {/* Roles strip */}
+              
             </div>
 
             {/* Right Column: Narrative & Credentials */}

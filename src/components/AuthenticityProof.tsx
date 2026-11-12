@@ -80,11 +80,11 @@ export const AuthenticityProof: React.FC<AuthenticityProofProps> = ({
                   className="w-full h-full object-contain hover:scale-103 transition duration-500"
                   referrerPolicy="no-referrer"
                 />
-                {/* <div className="absolute top-3 left-3 bg-[#464B2B]/90 backdrop-blur-xs text-white text-[11px] font-semibold px-2.5 py-1 rounded-md">
-                  {language === 'en' ? 'Natural Facial Radiance' : 'సహజ ముఖ కాంతి'}
+                {/* <div className="absolute top-3 left-3 bg-[#464B2B]/90 backdrop-blur-xs text-white text-[17px] font-semibold px-2.5 py-1 rounded-md">
+                  {language === 'en' ? 'BEFORE' : 'సహజ ముఖ కాంతి'}
                 </div> */}
               </div>
-        <p className="text-4xl font-extrabold text-[#292D19]">
+        <p className="w-[150px] sm:w-[250px] mx-auto bg-[#464B2B]/90 backdrop-blur-xs text-white text-[17px] font-semibold px-2.5 py-1 rounded-md">
           {language === 'en' ? 'BEFORE' : 'ముందు'}
         </p>
       </div>
@@ -98,11 +98,11 @@ export const AuthenticityProof: React.FC<AuthenticityProofProps> = ({
                   className="w-full h-full object-contain hover:scale-103 transition duration-500"
                   referrerPolicy="no-referrer"
                 />
-                {/* <div className="absolute top-3 left-3 bg-[#464B2B]/90 backdrop-blur-xs text-white text-[11px] font-semibold px-2.5 py-1 rounded-md">
-                  {language === 'en' ? 'Natural Facial Radiance' : 'సహజ ముఖ కాంతి'}
+                {/* <div className="absolute top-3 left-3 bg-[#464B2B]/90 backdrop-blur-xs text-white text-[17px] font-semibold px-2.5 py-1 rounded-md">
+                  {language === 'en' ? 'AFTER' : 'సహజ ముఖ కాంతి'}
                 </div> */}
               </div>
-        <p className="text-4xl font-extrabold text-[#292D19]">
+        <p className="w-[150px] sm:w-[250px] mx-auto  bg-[#464B2B]/90 backdrop-blur-xs text-white text-[17px] font-semibold px-2.5 py-1 rounded-md">
           {language === 'en' ? 'AFTER' : 'తర్వాత'}
         </p>
       </div>

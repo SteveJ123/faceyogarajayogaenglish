@@ -138,7 +138,7 @@ export const Hero: React.FC<HeroProps> = ({ language, onOpenRegister }) => {
               <img
                 src={IMAGES.hero}
                 alt="Face Yoga authentic practice demonstration"
-                className="w-full h-auto object-cover aspect-[4/3] sm:aspect-[16/9] lg:aspect-[4/3] group-hover:scale-102 transition duration-500"
+                className="w-full h-auto object-cover group-hover:scale-102 transition duration-500"
                 referrerPolicy="no-referrer"
               />
               
