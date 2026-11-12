@@ -5,8 +5,8 @@ export const IMAGES = {
   mentor: '/src/assets/images/mentor_portrait_1794459297744.jpg',
   naturalProof: '/src/assets/images/natural_facial_comparison_1794459298133.jpg',
   chakraSess: '/src/assets/images/chakra_meditation_session_1794459298562.jpg',
-  before: '/src/assets/images/before.png',
-  after: '/src/assets/images/after.png',
+  before: '/src/assets/images/before.jpeg',
+  after: '/src/assets/images/after.jpeg',
 };
 
 export const WORKSHOP_DETAILS = {

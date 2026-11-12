@@ -20,6 +20,7 @@ export const Hero: React.FC<HeroProps> = ({ language, onOpenRegister }) => {
               ? 'Real Photos! Natural Beauty! My Priority: Honesty, Natural Authenticity & Reality.'
               : 'నిజమైన ఫోటోలు! సహజమైన అందం! నిజాయితీకి, సహజత్వానికి, వాస్తవికతకు నా ప్రాధాన్యత!'}
           </p>
+          <Sparkles className="w-4 h-4 text-amber-300 shrink-0 hidden sm:inline" />
         </div>
       </div>
 
@@ -134,7 +135,7 @@ export const Hero: React.FC<HeroProps> = ({ language, onOpenRegister }) => {
 
           {/* Right Column: Dominant Focal Visual Carrier */}
           <div className="lg:col-span-5 flex flex-col items-center">
-            <div className="relative w-full max-w-md lg:max-w-none rounded-2xl overflow-hidden shadow-lg border border-[#DCE0C5] bg-white group">
+            <div className="relative w-full max-w-sm lg:max-w-sm rounded-2xl overflow-hidden shadow-lg border border-[#DCE0C5] bg-white group">
               <img
                 src={IMAGES.hero}
                 alt="Face Yoga authentic practice demonstration"

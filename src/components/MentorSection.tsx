@@ -43,10 +43,10 @@ export const MentorSection: React.FC<MentorSectionProps> = ({ language, onOpenRe
                 />                
               </div>
               <div className="w-full max-w-sm mt-2 p-3 bg-[#F8F9F2] rounded-xl border border-[#E3E6D2] text-center">
-                <div className="text-xs font-bold text-[#373B22]">
+                <div className="text-md font-bold text-[#373B22]">
                   {language === 'en' ? 'Face Yoga & Raja Yoga Master Trainer' : 'ఫేస్ యోగ + రాజ యోగ ట్రైనర్'}
                 </div>
-                <div className="text-[11px] text-[#696F4B] mt-0.5">
+                <div className="text-sm text-[#696F4B] mt-0.5">
                   {language === 'en' ? 'Gyan Murli Foundation' : 'జ్ఞాన్ మురళి ఫౌండేషన్'}
                 </div>
               </div>
@@ -59,14 +59,14 @@ export const MentorSection: React.FC<MentorSectionProps> = ({ language, onOpenRe
             <div className="lg:col-span-7 space-y-6 text-left">
               {/* Prestigious Credentials */}
               <div className="space-y-3 pb-6 border-b border-[#E6E8D8]">
-                <div className="text-xs font-bold uppercase tracking-wider text-[#737951]">
+                <div className="text-md font-extrabold uppercase tracking-wider text-[#737951]">
                   {language === 'en' ? 'Honorable Background & Leadership' : 'అనుభవం & గౌరవ పదవులు'}
                 </div>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm text-[#2C2E1F]">
                   <div className="flex items-start gap-2.5 p-3 rounded-lg bg-[#FAFBF6] border border-[#EBEEDC]">
                     <Award className="w-4 h-4 text-[#464B2B] shrink-0 mt-0.5" />
                     <div>
-                      <div className="font-semibold">{language === 'en' ? 'Former SBI Officer' : 'స్టేట్ బ్యాంక్ ఆఫ్ ఇండియా మాజీ అధికారి'}</div>
+                      <div className="font-extrabold">{language === 'en' ? 'Former SBI Officer' : 'స్టేట్ బ్యాంక్ ఆఫ్ ఇండియా మాజీ అధికారి'}</div>
                       <div className="text-xs text-[#696F4B]">{language === 'en' ? '22 Years Service (Opted VRS 2020)' : '22 సంవత్సరాల విశేష సేవ'}</div>
                     </div>
                   </div>
@@ -74,7 +74,7 @@ export const MentorSection: React.FC<MentorSectionProps> = ({ language, onOpenRe
                   <div className="flex items-start gap-2.5 p-3 rounded-lg bg-[#FAFBF6] border border-[#EBEEDC]">
                     <Heart className="w-4 h-4 text-[#464B2B] shrink-0 mt-0.5" />
                     <div>
-                      <div className="font-semibold">{language === 'en' ? 'Founder' : 'వ్యవస్థాపకులు'}</div>
+                      <div className="font-extrabold">{language === 'en' ? 'Founder' : 'వ్యవస్థాపకులు'}</div>
                       <div className="text-xs text-[#696F4B]">Gyan Murli Foundation</div>
                     </div>
                   </div>
@@ -82,7 +82,7 @@ export const MentorSection: React.FC<MentorSectionProps> = ({ language, onOpenRe
                   <div className="flex items-start gap-2.5 p-3 rounded-lg bg-[#FAFBF6] border border-[#EBEEDC]">
                     <BookOpen className="w-4 h-4 text-[#464B2B] shrink-0 mt-0.5" />
                     <div>
-                      <div className="font-semibold">{language === 'en' ? 'Director' : 'డైరెక్టర్'}</div>
+                      <div className="font-extrabold">{language === 'en' ? 'Director' : 'డైరెక్టర్'}</div>
                       <div className="text-xs text-[#696F4B]">Nirakar Shiv Paramatma Adhyatmik Vishwa Vidyalay</div>
                     </div>
                   </div>
@@ -90,7 +90,7 @@ export const MentorSection: React.FC<MentorSectionProps> = ({ language, onOpenRe
                   <div className="flex items-start gap-2.5 p-3 rounded-lg bg-[#FAFBF6] border border-[#EBEEDC]">
                     <ShieldCheck className="w-4 h-4 text-[#464B2B] shrink-0 mt-0.5" />
                     <div>
-                      <div className="font-semibold">{language === 'en' ? 'Director' : 'డైరెక్టర్'}</div>
+                      <div className="font-extrabold">{language === 'en' ? 'Director' : 'డైరెక్టర్'}</div>
                       <div className="text-xs text-[#696F4B]">Sunflower Networks Pvt. Ltd.</div>
                     </div>
                   </div>
@@ -100,7 +100,7 @@ export const MentorSection: React.FC<MentorSectionProps> = ({ language, onOpenRe
               {/* Founder's Voice / Quote */}
               <div className="relative pl-6 py-2 border-l-2 border-[#464B2B] space-y-3">
                 <Quote className="w-8 h-8 text-[#464B2B]/20 absolute -top-3 left-4" />
-                <h3 className="text-lg font-serif font-bold text-[#292D19]">
+                <h3 className="text-lg font-serif font-extrabold text-[#292D19]">
                   {language === 'en' ? '“From Banking to Bhagavad Gita”' : '“బ్యాంకింగ్ నుండి భగవద్గీత వరకు”'}
                 </h3>
                 <p className="text-sm sm:text-base text-[#464B2B] leading-relaxed">
