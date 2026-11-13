@@ -148,7 +148,7 @@ export const MentorSection: React.FC<MentorSectionProps> = ({ language, onOpenRe
                         <Play className="w-7 h-7 fill-current ml-1" />
                       </div>
                       <div className="text-base sm:text-lg font-bold font-serif">
-                        {language === 'en' ? 'Watch Video: Bhagavad Gita in Practical Life' : 'వీడియో చూడండి: దైనందిన జీవితంలో భగవద్గీత'}
+                        {language === 'en' ? 'Watch Video: Face Yoga And Raja Yoga' : 'వీడియో చూడండి: దైనందిన జీవితంలో భగవద్గీత'}
                       </div>
                       <div className="text-xs text-white/80 mt-1">
                         {language === 'en' ? 'Discourse by Legala Manjula · Click to Play' : 'లెగల మంజుల గారి ప్రసంగం'}
@@ -157,8 +157,8 @@ export const MentorSection: React.FC<MentorSectionProps> = ({ language, onOpenRe
                   </div>
                 ) : (
                   <iframe
-                    src="https://www.youtube.com/embed/-QJsMoE5GJ4?autoplay=1"
-                    title="Bhagavad Gita in Practical Life - Legala Manjula"
+                    src={IMAGES.video}
+                    title="Face Yoga And Raja Yoga - Legala Manjula"
                     className="w-full h-full border-0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                     allowFullScreen

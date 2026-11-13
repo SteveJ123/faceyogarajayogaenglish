@@ -7,6 +7,7 @@ export const IMAGES = {
   chakraSess: '/src/assets/images/chakra_meditation_session_1794459298562.jpg',
   before: '/src/assets/images/before.jpeg',
   after: '/src/assets/images/after.jpeg',
+  video: '/src/assets/video/mentor.mp4',
 };
 
 export const WORKSHOP_DETAILS = {

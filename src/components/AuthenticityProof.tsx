@@ -70,10 +70,13 @@ export const AuthenticityProof: React.FC<AuthenticityProofProps> = ({
     </p>
 
     {/* --- Modified: Two-Column Before & After Section --- */}
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-4">
+    
+    {/* grid-cols-1 md:grid-cols-2 gap-12 sm:gap-[14%] lg:gap-[24%] */}
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-[4%] sm:gap-[14%]  pt-4 max-w-3xl mx-auto justify-center items-center">
       {/* Before Image Container */}
       <div className="space-y-3">        
-        <div className="relative aspect-[4/3] bg-[#F2F4E6] overflow-hidden">
+        {/* relative aspect-[4/3] bg-[#F2F4E6] overflow-hidden */}
+        <div className="relative w-full max-w-xs lg:max-w-xs rounded-2xl overflow-hidden shadow-lg border border-[#DCE0C5] group mx-auto">
                 <img
                   src={IMAGES.before}
                   alt="Authentic natural facial wellness without filters"
@@ -83,15 +86,16 @@ export const AuthenticityProof: React.FC<AuthenticityProofProps> = ({
                 {/* <div className="absolute top-3 left-3 bg-[#464B2B]/90 backdrop-blur-xs text-white text-[17px] font-semibold px-2.5 py-1 rounded-md">
                   {language === 'en' ? 'BEFORE' : 'సహజ ముఖ కాంతి'}
                 </div> */}
-              </div>
-        <p className="w-[150px] sm:w-[250px] mx-auto bg-[#464B2B]/90 backdrop-blur-xs text-white text-[17px] font-semibold px-2.5 py-1 rounded-md">
+                <p className="max-w-3xl mx-auto bg-[#464B2B]/90 backdrop-blur-xs text-white text-[17px] font-semibold px-2.5 py-1 rounded-md">
           {language === 'en' ? 'BEFORE' : 'ముందు'}
         </p>
+              </div>
+        
       </div>
 
       {/* After Image Container */}
       <div className="space-y-3">
-        <div className="relative aspect-[4/3] bg-[#F2F4E6] overflow-hidden">
+        <div className="relative w-full max-w-xs lg:max-w-xs rounded-2xl overflow-hidden shadow-lg border border-[#DCE0C5] group mx-auto">
                 <img
                   src={IMAGES.after}
                   alt="Authentic natural facial wellness without filters"
@@ -101,12 +105,45 @@ export const AuthenticityProof: React.FC<AuthenticityProofProps> = ({
                 {/* <div className="absolute top-3 left-3 bg-[#464B2B]/90 backdrop-blur-xs text-white text-[17px] font-semibold px-2.5 py-1 rounded-md">
                   {language === 'en' ? 'AFTER' : 'సహజ ముఖ కాంతి'}
                 </div> */}
+                <p className="max-w-3xl mx-auto  bg-[#464B2B]/90 backdrop-blur-xs text-white text-[17px] font-semibold px-2.5 py-1 rounded-md">
+          {language === 'en' ? 'AFTER' : 'తర్వాత'}
+        </p>
+              </div>
+        
+      </div>
+    </div>
+
+    {/* <div className="grid grid-flow-row sm:grid-flow-col gap-8 pt-4 max-w-4xl mx-auto justify-between items-center">
+      
+      <div className="space-y-3">        
+      
+        <div className="relative w-full max-w-sm lg:max-w-sm rounded-2xl overflow-hidden shadow-lg border border-[#DCE0C5] group">
+                <img
+                  src={IMAGES.before}
+                  alt="Authentic natural facial wellness without filters"
+                  className="w-full h-full object-contain hover:scale-103 transition duration-500"
+                  referrerPolicy="no-referrer"
+                />      
+              </div>
+        <p className="w-[150px] sm:w-[250px] mx-auto bg-[#464B2B]/90 backdrop-blur-xs text-white text-[17px] font-semibold px-2.5 py-1 rounded-md">
+          {language === 'en' ? 'BEFORE' : 'ముందు'}
+        </p>
+      </div>
+      
+      <div className="space-y-3">
+        <div className="relative w-full max-w-sm lg:max-w-sm rounded-2xl overflow-hidden shadow-lg border border-[#DCE0C5] group">
+                <img
+                  src={IMAGES.after}
+                  alt="Authentic natural facial wellness without filters"
+                  className="w-full h-full object-contain hover:scale-103 transition duration-500"
+                  referrerPolicy="no-referrer"
+                />
               </div>
         <p className="w-[150px] sm:w-[250px] mx-auto  bg-[#464B2B]/90 backdrop-blur-xs text-white text-[17px] font-semibold px-2.5 py-1 rounded-md">
           {language === 'en' ? 'AFTER' : 'తర్వాత'}
         </p>
       </div>
-    </div>
+    </div> */}
     {/* ------------------------------------------------- */}
 
   </div>
