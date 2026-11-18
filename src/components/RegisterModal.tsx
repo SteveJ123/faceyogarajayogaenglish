@@ -25,7 +25,115 @@ export const RegisterModal: React.FC<RegisterModalProps> = ({ isOpen, onClose, l
 
   if (!isOpen) return null;
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  // const handleSubmit = async (e: React.FormEvent) => {
+  //   e.preventDefault();
+  //   setErrorMessage('');
+
+  //   // Basic Validation
+  //   const cleanPhone = formData.whatsappNumber.replace(/\D/g, '');
+  //   if (cleanPhone.length < 10) {
+  //     setErrorMessage(
+  //       language === 'en'
+  //         ? 'Please enter a valid 10-digit WhatsApp phone number.'
+  //         : 'దయచేసి సరైన 10 అంకెల వాట్సాప్ మొబైల్ నంబర్‌ను నమోదు చేయండి.'
+  //     );
+  //     return;
+  //   }
+
+  //   setIsSubmitting(true);
+
+  //   try {
+  //     // Attempt real registration payload
+  //     const payload = {
+  //       fullName: 'Attendee',
+  //       email: 'attendee@gmail.com',
+  //       whatsappNumber: cleanPhone,
+  //       challenges: 'challenge',
+  //       amount: WORKSHOP_DETAILS.feeDiscounted * 100, // 49900 paise
+  //       coursename: 'Face Yoga and Raja Yoga English Cohort',
+  //       language: 'English',
+  //     };
+
+      
+  //     try {
+  //       // await fetch('https://apibhagavadhgitainpracticallife.younghappyandhealthy.com/api/register', {
+  //       //   method: 'POST',
+  //       //   headers: { 'Content-Type': 'application/json' },
+  //       //   body: JSON.stringify(payload),
+  //       //   signal: controller.signal,
+  //       // });
+  //       const response = await fetch('https://apibhagavadhgitainpracticallife.younghappyandhealthy.com/api/register', {
+  //       method: 'POST',
+  //       headers: { 'Content-Type': 'application/json' },
+  //       body: JSON.stringify(payload),
+  //     });
+
+  //     const data = await response.json();
+  //     console.log("data", data)
+  //     if (!response?.success) {
+  //       throw new Error(data.message || 'Registration failed on server');
+  //     }
+
+  //       // 2. Check if your backend returns Razorpay order details to launch the gateway
+  //     // (Assuming your backend returns orderId, key, etc., adjust keys based on your API response)
+  //     if (data.order_Id) {
+  //       const options = {
+  //         key: data.keyId, // Razorpay Key ID sent from backend
+  //         amount: data.amount,
+  //         currency: "INR",
+  //         name: "Workshop Registration",
+  //         description: "Face Yoga & Raja Yoga Workshop",
+  //         order_id: data.order_Id,
+  //         handler: function (paymentResponse: any) {
+  //           // This runs after successful UPI / Card payment
+  //           setOrderId(paymentResponse.razorpay_payment_id);
+  //           setIsSuccess(true);
+  //         },
+  //         prefill: {
+  //           name: formData.fullName,
+  //           email: formData.email,
+  //           contact: cleanPhone,
+  //         },
+  //         theme: {
+  //           color: "#23172B" // Matches your Mystical Plum theme
+  //         }
+  //       };
+
+  //       const rzp = new (window as any).Razorpay(options);
+  //       rzp.open();
+  //       alert()
+  //     } else {
+  //       // Fallback if backend directly completes or handles it differently
+  //       const generatedOrderId = data.orderId || `FYRY-${Date.now().toString().slice(-6)}`;
+  //       setOrderId(generatedOrderId);
+  //       setIsSuccess(true);
+  //     }
+  //     } catch (netErr) {
+  //       // Fallback gracefully so registration always completes for the customer
+  //       console.log('Online endpoint responded or timed out; proceeding with confirmed reservation.', netErr);
+  //     } finally {
+  //       // clearTimeout(timeoutId);
+  //       setIsSubmitting(false);
+  //     }
+
+  //     // Generate realistic booking order confirmation
+  //     const generatedOrderId = `FYRY-${Date.now().toString().slice(-6)}`;
+  //     setOrderId(generatedOrderId);
+  //     setIsSuccess(true);
+
+  //   } catch (err: unknown) {
+  //     console.error(err);
+  //     setErrorMessage(
+  //       language === 'en'
+  //         ? 'An error occurred during submission. Please try again or call our helpline.'
+  //         : 'నమోదు ప్రక్రియలో లోపం ఏర్పడింది. దయచేసి మా హెల్ప్‌లైన్ నంబర్‌కు కాల్ చేయండి.'
+  //     );
+  //   } finally {
+  //     setIsSubmitting(false);
+  //   }
+  // };
+
+const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setErrorMessage('');
 
@@ -43,51 +151,119 @@ export const RegisterModal: React.FC<RegisterModalProps> = ({ isOpen, onClose, l
     setIsSubmitting(true);
 
     try {
-      // Attempt real registration payload
       const payload = {
-        fullName: formData.fullName.trim() || 'Attendee',
-        email: formData.email.trim() || 'attendee@gmail.com',
+        fullName: 'Attendee',
+        email: 'attendee@gmail.com',
         whatsappNumber: cleanPhone,
-        challenges: formData.challenge,
-        amount: WORKSHOP_DETAILS.feeDiscounted * 100, // 49900 paise
+        challenges: 'challenge',
+        amount: WORKSHOP_DETAILS.feeDiscounted * 100,
         coursename: 'Face Yoga and Raja Yoga English Cohort',
-        language: language === 'en' ? 'English' : 'Telugu',
+        language: 'English',
       };
 
-      // Try backend endpoint with timeout
-      const controller = new AbortController();
-      const timeoutId = setTimeout(() => controller.abort(), 3500);
+      const response = await fetch('https://apibhagavadhgitainpracticallife.younghappyandhealthy.com/api/register', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload),
+      });
 
-      try {
-        await fetch('https://apibhagavadhgitainpracticallife.younghappyandhealthy.com/api/register', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(payload),
-          signal: controller.signal,
-        });
-      } catch (netErr) {
-        // Fallback gracefully so registration always completes for the customer
-        console.log('Online endpoint responded or timed out; proceeding with confirmed reservation.', netErr);
-      } finally {
-        clearTimeout(timeoutId);
+      const data = await response.json();
+      console.log("data", data);
+
+      if (!response.ok || !data.success) {
+        throw new Error(data.message || 'Registration failed on server');
       }
 
-      // Generate realistic booking order confirmation
-      const generatedOrderId = `FYRY-${Date.now().toString().slice(-6)}`;
-      setOrderId(generatedOrderId);
-      setIsSuccess(true);
-    } catch (err: unknown) {
+      if (data.order_id) {
+        // Helper function to load Razorpay script dynamically if missing
+        const loadRazorpayScript = () => {
+          return new Promise((resolve) => {
+            if ((window as any).Razorpay) {
+              resolve(true);
+              return;
+            }
+            const script = document.createElement('script');
+            script.src = 'https://checkout.razorpay.com/v1/checkout.js';
+            script.onload = () => resolve(true);
+            script.onerror = () => resolve(false);
+            document.body.appendChild(script);
+          });
+        };
+
+        const isLoaded = await loadRazorpayScript();
+
+        if (!isLoaded || !(window as any).Razorpay) {
+          throw new Error('Razorpay SDK failed to load. Please check your internet connection.');
+        }
+
+        const options = {
+          key: data.key_id,
+          amount: data.amount,
+          currency: data.currency || "INR",
+          name: "Workshop Registration",
+          description: "Face Yoga & Raja Yoga Workshop",
+          order_id: data.order_id,
+          theme: {
+            color: "#23172B"
+          },
+          prefill: {
+            name: formData.fullName || 'Attendee',
+            email: formData.email || 'attendee@gmail.com',
+            contact: cleanPhone,
+          },
+          handler: async function (paymentResponse: any) {
+            try {
+              const verifyRes = await fetch('https://apibhagavadhgitainpracticallife.younghappyandhealthy.com/api/verify-payment', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                  razorpay_order_id: paymentResponse.razorpay_order_id,
+                  razorpay_payment_id: paymentResponse.razorpay_payment_id,
+                  razorpay_signature: paymentResponse.razorpay_signature
+                })
+              });
+
+              const verifyData = await verifyRes.json();
+
+              if (verifyRes.ok && verifyData.success) {
+                localStorage.setItem("register", "register");
+                setOrderId(paymentResponse.razorpay_payment_id);
+                setIsSuccess(true);
+              } else {
+                setErrorMessage(verifyData.message || 'Payment verification failed.');
+              }
+            } catch (err) {
+              console.error(err);
+              setErrorMessage('Verification network error. Please contact support.');
+            }
+          }
+        };
+
+        const rzp = new (window as any).Razorpay(options);
+        
+        rzp.on('payment.failed', function (failureResponse: any) {
+          setErrorMessage(`Payment Failed: ${failureResponse.error.description}`);
+        });
+
+        rzp.open();
+
+      } else {
+        const generatedOrderId = data.orderId || `FYRY-${Date.now().toString().slice(-6)}`;
+        setOrderId(generatedOrderId);
+        setIsSuccess(true);
+      }
+
+    } catch (err: any) {
       console.error(err);
-      setErrorMessage(
+      setErrorMessage(err.message || (
         language === 'en'
           ? 'An error occurred during submission. Please try again or call our helpline.'
           : 'నమోదు ప్రక్రియలో లోపం ఏర్పడింది. దయచేసి మా హెల్ప్‌లైన్ నంబర్‌కు కాల్ చేయండి.'
-      );
+      ));
     } finally {
       setIsSubmitting(false);
     }
   };
-
   const handleDownloadCalendar = () => {
     const icsData = [
       'BEGIN:VCALENDAR',
@@ -170,7 +346,7 @@ export const RegisterModal: React.FC<RegisterModalProps> = ({ isOpen, onClose, l
 
             <form onSubmit={handleSubmit} className="space-y-4 text-left">
               <div>
-                <label className="block text-xs font-semibold text-[#33381E] mb-1">
+                {/* <label className="block text-xs font-semibold text-[#33381E] mb-1">
                   {language === 'en' ? 'Full Name *' : 'పూర్తి పేరు *'}
                 </label>
                 <input
@@ -180,7 +356,7 @@ export const RegisterModal: React.FC<RegisterModalProps> = ({ isOpen, onClose, l
                   onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
                   placeholder={language === 'en' ? 'e.g., Ananya Sharma' : 'మీ పూర్తి పేరు'}
                   className="w-full px-3.5 py-2.5 rounded-xl border border-[#DCE0C5] text-sm text-[#2C2E1F] focus:outline-none focus:ring-2 focus:ring-[#464B2B]/40"
-                />
+                /> */}
               </div>
 
               <div>
@@ -207,7 +383,7 @@ export const RegisterModal: React.FC<RegisterModalProps> = ({ isOpen, onClose, l
                 </p>
               </div>
 
-              <div>
+              {/* <div>
                 <label className="block text-xs font-semibold text-[#33381E] mb-1">
                   {language === 'en' ? 'Email Address *' : 'ఈమెయిల్ చిరునామా *'}
                 </label>
@@ -219,9 +395,9 @@ export const RegisterModal: React.FC<RegisterModalProps> = ({ isOpen, onClose, l
                   placeholder="name@example.com"
                   className="w-full px-3.5 py-2.5 rounded-xl border border-[#DCE0C5] text-sm text-[#2C2E1F] focus:outline-none focus:ring-2 focus:ring-[#464B2B]/40"
                 />
-              </div>
+              </div> */}
 
-              <div>
+              {/* <div>
                 <label className="block text-xs font-semibold text-[#33381E] mb-1">
                   {language === 'en' ? 'Primary Health / Wellness Goal' : 'మీరు ప్రధానంగా సాధించాలనుకుంటున్నది'}
                 </label>
@@ -246,7 +422,7 @@ export const RegisterModal: React.FC<RegisterModalProps> = ({ isOpen, onClose, l
                     {language === 'en' ? 'Raja Yoga Meditation & Soul Purity' : 'రాజ యోగ ధ్యానం & ఆధ్యాత్మిక శుద్ధి'}
                   </option>
                 </select>
-              </div>
+              </div> */}
 
               {errorMessage && (
                 <div className="p-3 bg-red-50 border border-red-200 text-red-700 text-xs rounded-xl">

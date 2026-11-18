@@ -46,7 +46,7 @@ export const Header: React.FC<HeaderProps> = ({
 
         {/* Zone 3: Language Toggle + Primary Action */}
         <div className="flex items-center gap-3 shrink-0">
-          <button
+          {/* <button
             onClick={onToggleLanguage}
             type="button"
             className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-[#D5D9BE] bg-white/80 hover:bg-white text-xs font-medium text-[#464B2B] transition-colors shadow-xs"
@@ -55,7 +55,7 @@ export const Header: React.FC<HeaderProps> = ({
           >
             <Globe className="w-3.5 h-3.5" />
             <span className="font-semibold">{language === 'en' ? 'తెలుగు' : 'English'}</span>
-          </button>
+          </button> */}
 
           <button
             onClick={onOpenRegister}
